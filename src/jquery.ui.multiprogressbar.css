@@ -8,11 +8,68 @@
  * Licensed under the MIT license (MIT-LICENSE.txt).
  */
 
+.multiprogressbar {
+	font-family: Helvetica, Arial, Sans-Serif;
+}
+
 .ju-multiprogressbar .ui-progressbar-value {
-	float: left;
+	float: right;
+	margin: 0 -2px;
+	border: none;
 }
 
 .ju-multiprogressbar .ju-multiprogressbar-valuetext {
 	margin-top: 0.3em;
 	text-align: center;
+}
+
+.ju-multiprogressbar {
+    border-radius: 20px;
+    background-color: #dce0e3;
+    //margin: 0.7em;
+    float: right;
+    //width: //Calculated later as calc(100% - 3.2em);
+    display: inline-block;
+    position: relative;
+    //width: 100%;
+    //left: -3.2em;
+    //top: -33px;
+}
+
+.progressbar-info {
+	float: right;
+	text-align: center;
+	width: 5em;
+}
+
+.minBarValue {
+	background-image: linear-gradient(99deg, #ffc233, #ffe19c);
+}
+
+.minCrossedBarValue {
+	background: #68c9f7;
+}
+
+.progressbar-bottomText {
+	direction: rtl;
+	position: relative;
+	top: 0.11em;
+}
+.progressbar-hoverBar {
+	direction: rtl;
+	position: relative;
+}
+
+.minCrossedBarText {
+	display: inline-block;
+}
+
+.minCrossedHoverBar {
+	display: inline-block;
+	position: relative;
+	top: -1em;
+	right: -.6em;
+	width: 2px;
+	height: 12px;
+	background-color: #24283a;
 }

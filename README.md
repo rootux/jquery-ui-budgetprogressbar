@@ -1,6 +1,9 @@
 jQuery UI Multi-Progress Bar 1.1.0
 ==================================
 
+Based on [multi-progressbar](https://github.com/j-ulrich/jquery-ui-multiprogressbar)
+Takes a minimum, maximum and current value and display them on a progress bar
+
 The multiprogressbar plugin provides a progress bar based on the basic jQuery UI progress bar
 widget but with the ability to split the progress into parts. Each part got it's own progress
 value and can be styled differently by providing class(es).
@@ -31,10 +34,10 @@ remaining parts will not be shown.
 ```javascript
 // Initialize the multiprogressbar
 $('#MultiProgressBarDiv').multiprogressbar({
-	parts: [{value: 10, text: true, barClass: 'FirstPartClass'}, // First part: 10% progress, display progress, use class 'FirstPartClass' for the bar
-			{value: 20, text: 'Critical', textClass: 'redText'}, // Second part: 20% progress, display the text 'Critical', use class 'redTest' for the text
-			{value: 35, barClass: 'ThirdPartClass ExtraClass'}], // Third part: 35% progress, use classes 'ThirdPartClass' and 'ExtraClass' for the bar
-	complete: function() { alert('Full!'); } // Bind to the complete event during initialization
+	min: 30,
+	max: 100,
+	value: 50
+	}
 });
 
 // Bind to the complete event after initialization

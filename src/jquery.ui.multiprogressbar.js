@@ -18,8 +18,8 @@
 
 (function($) {
 	"use strict";
-	var calculatedProgressMargin = '5.0em';
-	var calculatedProgressWidth = 'calc(100% - ' + calculatedProgressMargin+')';
+	var calculatedProgressMargin = '0em';
+	var calculatedProgressWidth = 'calc(100%)';
 	/**
 	 * Constructs a multiprogressbar.
 	 * @name multiprogressbar
@@ -34,11 +34,6 @@
 	 */
 	{
 		
-		// Options
-		/**
-		 * Default values of the options.
-		 * @since 1.0
-		 */
 		options: {
 			min:0,
 			max:100,
@@ -46,15 +41,9 @@
 			parts: [{value: 0, barClass: "", text: false, textClass: ""}]
 		},
 
-		/**
-		 * Constructor for multiprogressbars.
-		 * @private
-		 * @author julrich
-		 * @since 1.0
-		 */
+
 		_create: function() {
 			var self = this;
-			self._createInfo();
 			self.element.addClass("multiprogressbar");
 			self.progressRoot = self._createProgressRoot();
 			self.progressBottomText = self._createProgressBottomText();
@@ -75,30 +64,11 @@
 		_createPartsFromOptions: function() {
 			var self = this;
 			self.options.parts = [];
-			// Min part not crossed yet
-			if(self.options.value < self.options.min) {
-				var value = self.options.value / self.options.max * 100;
-				var firstPart = {value: value, barClass: "minBarValue"};
-				self.options.parts.push(firstPart);
-			}else {
-				// Min part crossed
-				// Create min part
-				// var minValue = self.options.min / self.options.max * 100;
-				// console.log(minValue);
-				// var firstPart = {value: minValue, barClass: "minCrossedBar"};
-				// self.options.parts.push(firstPart);
-				// Create val part
-				var value = (self.options.value / self.options.max * 100);
-				console.log(value);
-				var secondPart = {value: value, barClass: "minCrossedBarValue"};
-				self.options.parts.push(secondPart);
-			}
-		},
-
-		_createInfo: function() {
-			var self = this;
-			var template = "<div class='progressbar-info'>"+ self.options.value + "/" + self.options.max + "<br>מומנו</div>";
-			self.element.append(template);
+			// Does minimum reached?
+			var barClass = (self.options.value < self.options.min) ? "minBarValue" : "minCrossedBarValue";
+			var value = self.options.value / self.options.max * 100;
+			var firstPart = {value: value, barClass: barClass};
+			self.options.parts.push(firstPart);
 		},
 
 		_createProgressRoot: function() {
@@ -156,13 +126,17 @@
 					first = false;
 					// Check if the part would exceed the 100% and cut it at 100%
 					part.value = totalValue+part.value > 100 ? 100-totalValue : part.value; 
-					partElement.css('width', 'calc(' + part.value + '% + 2px - .5em').show();
+					partElement.css('width', 'calc(' + part.value + '%').show();
 					lastVisibleElement = partElement;
 					totalValue += part.value;
 
 					var minValue = (self.options.min / self.options.max * 100);
-					$('<div></div>').addClass("minCrossedBarText").css('margin-right', 'calc(' + minValue + '% - 2em)').text(self.options.min).appendTo(self.progressBottomText);
-					$('<div></div>').addClass("minCrossedHoverBar").appendTo(self.progressBottomText);
+					var minValueText = self.options.min.toString();
+					if (self.options.min < 10) {
+						minValueText = " " + minValueText; //so the margin would be right for 5 as it for 50
+					}
+					$('<div></div>').addClass("minCrossedHoverBar").css('margin-right', 'calc(' + minValue + '%)').appendTo(self.progressBottomText);
+					$('<div></div>').addClass("minCrossedBarText").css('margin-right', 'calc(' + minValue + '% - 0.6em)').text(minValueText).appendTo(self.progressBottomText);
 				}
 				else {
 					// Hide part if the progress is <= 0 or if we exceeded 100% already 
@@ -193,12 +167,7 @@
 			}
 		},
 		
-		/**
-		 * Restores the element to it's original state.
-		 * @public
-		 * @author julrich
-		 * @since 1.0
-		 */
+
 		destroy: function() {
 			var self = this;
 			self._getPartElements().remove();

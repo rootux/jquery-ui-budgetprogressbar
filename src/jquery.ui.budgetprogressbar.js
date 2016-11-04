@@ -2,36 +2,14 @@
 /*jshint camelcase:true, plusplus:true, forin:true, noarg:true, noempty:true, eqeqeq:true, bitwise:true, strict:true, undef:true, unused:true, curly:true, browser:true, devel:true, maxerr:100, white:false, onevar:false */
 /*global jQuery:true $:true */
 
-/* jQuery UI Multi-Progress Bar 1.1.0
- * http://github.com/j-ulrich/jquery-ui-multiprogressbar
- *
- * Copyright (c) 2012 Jochen Ulrich <jochenulrich@t-online.de>
- * Licensed under the MIT license (MIT-LICENSE.txt).
- */
-
-/**
- * @file jQuery UI Multi-Progress Bar
- * @version 1.0
- * @copyright 2012 Jochen Ulrich
- * @license MIT (MIT-LICENSE.txt)
- */
 
 (function($) {
 	"use strict";
 	var calculatedProgressMargin = '0em';
 	var calculatedProgressWidth = 'calc(100%)';
-	/**
-	 * Constructs a multiprogressbar.
-	 * @name multiprogressbar
-	 * @public
-	 * @function
-	 * @memberOf jQuery.ju
-	 */
-	$.widget("ju.multiprogressbar", 
 	
-	/**
-	 * @lends jQuery.ju.multiprogressbar.prototype
-	 */
+	$.widget("gu.budgetprogressbar", 
+	
 	{
 		
 		options: {
@@ -44,12 +22,12 @@
 
 		_create: function() {
 			var self = this;
-			self.element.addClass("multiprogressbar");
+			self.element.addClass("budgetprogressbar");
 			self.progressRoot = self._createProgressRoot();
 			self.progressBottomText = self._createProgressBottomText();
 			self.progressHoverBar = self._createProgressHoverBar();
 			self.progressRoot.progressbar({value: 0, disabled: self.options.disabled}); // Creates one part with width 0%
-			self.progressRoot.addClass("ju-multiprogressbar");
+			self.progressRoot.addClass("gb-budgetprogressbar");
 			self.progressRoot.css('width',calculatedProgressWidth);
 			
 			self._createPartsFromOptions();
@@ -154,7 +132,7 @@
 					else if ($.trim(part.text) !== "") {
 						textForPart = part.text;
 					}
-					$('<div></div>').addClass("ju-multiprogressbar-valuetext").text(textForPart).addClass(part.textClass).appendTo(partElement);
+					$('<div></div>').addClass("gb-budgetprogressbar-valuetext").text(textForPart).addClass(part.textClass).appendTo(partElement);
 				}
 			});
 			if (self.created === true) { // Don't trigger "change" when we are creating the progressbar for the first time 
@@ -174,14 +152,6 @@
 			self.progressRoot.progressbar("destroy");
 		},
 		
-		/**
-		 * Changes an option.
-		 * @param {String} option - name of the option to be set.
-		 * @param value - new value for the option.
-		 * @private
-		 * @author julrich
-		 * @since 1.0
-		 */
 		_setOption: function(option, value) {
 			var self = this;
 			$.Widget.prototype._setOption.apply( self, arguments );

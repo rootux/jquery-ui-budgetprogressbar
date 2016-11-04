@@ -2,11 +2,11 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="../libs/jquery-ui-1.8.22.custom.css" />
-		<link rel="stylesheet" href="../src/jquery.ui.multiprogressbar.css" />
+		<link rel="stylesheet" href="../src/jquery.ui.budgetprogressbar.css" />
 		<script type="text/javascript" src="../libs/jquery-1.7.2.js"></script>
 		<script type="text/javascript" src="../libs/jquery-ui-1.8.22.custom.min.js"></script>
 		<script type="text/javascript" src="../libs/jquery.outerhtml.js"></script>
-		<script type="text/javascript" src="../src/jquery.ui.multiprogressbar.js"></script>
+		<script type="text/javascript" src="../src/jquery.ui.budgetprogressbar.js"></script>
 		<style type="text/css">
 		.container {
 			width: 50%;
@@ -81,7 +81,7 @@
 
 	var dreams = [dream1 , dream2, dream3, dream4, dream5, dream6];
 	for(var i=1;i<dreams.length+1;i++) {
-		$('#dreams' + i).multiprogressbar(dreams[i-1]);
+		$('#dreams' + i).budgetprogressbar(dreams[i-1]);
 		$('#current' + i).text(dreams[i-1].value);
 		$('#max' + i).text(dreams[i-1].max);
 	}

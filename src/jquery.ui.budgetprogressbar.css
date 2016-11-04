@@ -4,18 +4,18 @@
 	font-family: Helvetica, Arial, Sans-Serif;
 }
 
-.gb-budgetprogressbar .ui-progressbar-value {
+.budgetprogressbar .gb-budgetprogressbar .ui-progressbar-value {
 	float: right;
 	margin: 0 -2px;
 	border: none;
 }
 
-.gb-budgetprogressbar .gb-budgetprogressbar-valuetext {
+.budgetprogressbar .gb-budgetprogressbar .gb-budgetprogressbar-valuetext {
 	margin-top: 0.3em;
 	text-align: center;
 }
 
-.gb-budgetprogressbar {
+.budgetprogressbar .gb-budgetprogressbar {
     border-radius: 20px;
     background-color: #dce0e3;
     float: right;
@@ -23,38 +23,38 @@
     position: relative;
 }
 
-.progressbar-info {
+.budgetprogressbar .progressbar-info {
 	float: right;
 	text-align: center;
 	width: 5em;
 }
 
-.minBarValue {
+.budgetprogressbar .minBarValue {
 	background-image: linear-gradient(99deg, #ffc233, #ffe19c);
 }
 
-.minCrossedBarValue {
+.budgetprogressbar .minCrossedBarValue {
 	background: #68c9f7;
 }
 
-.progressbar-bottomText {
+.budgetprogressbar .progressbar-bottomText {
 	direction: rtl;
 	position: relative;
 	top: 0.11em;
 }
 
-.progressbar-hoverBar {
+.budgetprogressbar .progressbar-hoverBar {
 	direction: rtl;
 	position: relative;
 }
 
-.minCrossedBarText {
+.budgetprogressbar .minCrossedBarText {
 	position: relative;
 	display: inline-block;
 	top: -0.7em;
 }
 
-.minCrossedHoverBar {
+.budgetprogressbar .minCrossedHoverBar {
 	display: inline-block;
 	position: relative;
 	top: -0.80em;

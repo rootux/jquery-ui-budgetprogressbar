@@ -4,6 +4,10 @@
 	font-family: Helvetica, Arial, Sans-Serif;
 }
 
+.budgetprogressbar .ui-progressbar {
+	height: 8px;
+}
+
 .budgetprogressbar .gb-budgetprogressbar .ui-progressbar-value {
 	float: right;
 	margin: 0 -2px;

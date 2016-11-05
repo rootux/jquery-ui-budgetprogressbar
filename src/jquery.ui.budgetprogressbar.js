@@ -124,7 +124,7 @@
 						minValueText = " " + minValueText; //so the margin would be right for 5 as it for 50
 					}
 					$('<div></div>').addClass("minCrossedHoverBar").css('margin-right', 'calc(' + minValue + '% + 2px)').appendTo(self.progressBottomText);
-					$('<div></div>').addClass("minCrossedBarText").css('margin-right', 'calc(' + minValue + '% - 0.6em)').text(minValueText).appendTo(self.progressBottomText);
+					$('<div></div>').addClass("minCrossedBarText").css('margin-right', 'calc(' + minValue + '% - 0.5em)').text(minValueText).appendTo(self.progressBottomText);
 				}
 				else {
 					// Hide part if the progress is <= 0 or if we exceeded 100% already 

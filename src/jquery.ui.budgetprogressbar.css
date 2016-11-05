@@ -56,7 +56,7 @@
 
 .budgetprogressbar .minCrossedBarText {
 	position: relative;
-	display: inline-block;
+	display: block;
 	top: -0.7em;
 }
 

@@ -65,6 +65,13 @@
 			<span> OF </span>
 			<div id="max6"></div>
 			<div id="dreams6"></div>
+
+			Midburnerot Dreams data:
+			<br>
+			<div id="current_data_1"></div>
+			<span> OF </span>
+			<div id="max_data_1"></div>
+			<div id="dreams_data_1" data-min='20' data-max='40' data-value='30'></div>
 		</div>
 	</body>
 	<script type="text/javascript">
@@ -81,6 +88,8 @@
 		$('#current' + i).text(dreams[i-1].value);
 		$('#max' + i).text(dreams[i-1].max);
 	}
+
+	$('#dreams_data_1').budgetprogressbar();
 
 
 	</script>

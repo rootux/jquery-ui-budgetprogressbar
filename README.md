@@ -36,6 +36,19 @@ $('#BudgetProgressBarDiv').budgetprogressbar({
 	}
 });
 
+```
+
+#### Example 2 - using data-attributes: ####
+```html
+<div id='BudgetProgressBarDiv' data-min='10' data-max='20' data-value='15'></div>
+```
+
+```javascript
+// Initialize the budgetprogressbar - data will be read from the data attribtues
+$('#BudgetProgressBarDiv').budgetprogressbar();
+
+```
+
 // Bind to the complete event after initialization
 $('#BudgetProgressBarDiv').bind('budgetprogressbarcomplete', function() { alert('Complete!'); });
 

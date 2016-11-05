@@ -22,9 +22,11 @@
 .budgetprogressbar .gb-budgetprogressbar {
     border-radius: 20px;
     background-color: #dce0e3;
+    background: #dce0e3;
     float: right;
     display: inline-block;
     position: relative;
+    border: none;
 }
 
 .budgetprogressbar .progressbar-info {

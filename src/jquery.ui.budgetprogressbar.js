@@ -110,7 +110,7 @@
 			$.each(parts, function(i, part) {
 				var partElement = $(self._partTemplate).appendTo(self.progressRoot);
 				partElement.removeClass("ui-corner-left");
-				if (part.value > 0 && totalValue < 100) {
+				if (part.value >= 0 && totalValue < 100) {
 					first = false;
 					// Check if the part would exceed the 100% and cut it at 100%
 					part.value = totalValue+part.value > 100 ? 100-totalValue : part.value; 

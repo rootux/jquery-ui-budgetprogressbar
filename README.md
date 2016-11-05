@@ -49,6 +49,7 @@ $('#BudgetProgressBarDiv').budgetprogressbar();
 
 ```
 
+```javascript
 // Bind to the complete event after initialization
 $('#BudgetProgressBarDiv').bind('budgetprogressbarcomplete', function() { alert('Complete!'); });
 

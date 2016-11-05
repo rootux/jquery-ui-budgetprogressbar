@@ -1,4 +1,4 @@
-jQuery UI Multi-Progress Bar 1.1.0
+jQuery UI Budget-Progress Bar 1.1.0
 ==================================
 
 Based on [multi-progressbar](https://github.com/j-ulrich/jquery-ui-budgetprogressbar)

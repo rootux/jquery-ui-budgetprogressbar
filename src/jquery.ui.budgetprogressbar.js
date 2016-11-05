@@ -114,7 +114,7 @@
 					first = false;
 					// Check if the part would exceed the 100% and cut it at 100%
 					part.value = totalValue+part.value > 100 ? 100-totalValue : part.value; 
-					partElement.css('width', 'calc(' + part.value + '%').show();
+					partElement.css('width', 'calc(' + part.value + '% + 2px)').show();
 					lastVisibleElement = partElement;
 					totalValue += part.value;
 
@@ -123,7 +123,7 @@
 					if (self.options.min < 10) {
 						minValueText = " " + minValueText; //so the margin would be right for 5 as it for 50
 					}
-					$('<div></div>').addClass("minCrossedHoverBar").css('margin-right', 'calc(' + minValue + '%)').appendTo(self.progressBottomText);
+					$('<div></div>').addClass("minCrossedHoverBar").css('margin-right', 'calc(' + minValue + '% + 2px)').appendTo(self.progressBottomText);
 					$('<div></div>').addClass("minCrossedBarText").css('margin-right', 'calc(' + minValue + '% - 0.6em)').text(minValueText).appendTo(self.progressBottomText);
 				}
 				else {

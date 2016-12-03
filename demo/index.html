@@ -28,49 +28,58 @@
 			<br>
 			<div id="current1"></div>
 			<span> OF </span>
-			<div id="max1"></div>
+			Min <span id="min1"></span> Max <span id="max1"></span>
+			<br>
+			<br>
 			<div id="dreams1"></div>
 
 			Midburnerot Dreams2:
 			<br>
 			<div id="current2"></div>
 			<span> OF </span>
-			<div id="max2"></div>
+			Min <span id="min2"></span> Max <span id="max2"></span>
+			<br>
+			<br>
 			<div id="dreams2"></div>
 
 			Midburnerot Dreams3:
 			<br>
 			<div id="current3"></div>
 			<span> OF </span>
-			<div id="max3"></div>
+			Min <span id="min3"></span> Max <span id="max3"></span>
+			<br>
+			<br>
 			<div id="dreams3"></div>
 
 			Midburnerot Dreams4:
 			<br>
 			<div id="current4"></div>
 			<span> OF </span>
-			<div id="max4"></div>
+			Min <span id="min4"></span> Max <span id="max4"></span>
+			<br>
+			<br>
 			<div id="dreams4"></div>
 
 			Midburnerot Dreams5:
 			<br>
 			<div id="current5"></div>
 			<span> OF </span>
-			<div id="max5"></div>
+			Min <span id="min5"></span> Max <span id="max5"></span>
+			<br>
+			<br>
 			<div id="dreams5"></div>
 
 			Midburnerot Dreams6:
 			<br>
 			<div id="current6"></div>
 			<span> OF </span>
-			<div id="max6"></div>
+			Min <span id="min6"></span> Max <span id="max6"></span>
+			<br>
+			<br>
 			<div id="dreams6"></div>
 
 			Midburnerot Dreams data:
 			<br>
-			<div id="current_data_1"></div>
-			<span> OF </span>
-			<div id="max_data_1"></div>
 			<div id="dreams_data_1" data-min='20' data-max='40' data-value='30'></div>
 		</div>
 	</body>
@@ -86,6 +95,7 @@
 	for(var i=1;i<dreams.length+1;i++) {
 		$('#dreams' + i).budgetprogressbar(dreams[i-1]);
 		$('#current' + i).text(dreams[i-1].value);
+		$('#min' + i).text(dreams[i-1].min);
 		$('#max' + i).text(dreams[i-1].max);
 	}
 

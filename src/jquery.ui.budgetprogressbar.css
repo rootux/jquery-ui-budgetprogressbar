@@ -1,22 +1,26 @@
 @CHARSET "UTF-8";
 
 .budgetprogressbar {
-	font-family: Helvetica, Arial, Sans-Serif;
+  font-family: Helvetica, Arial, Sans-Serif;
+  display: inline-block;
+  width: calc(100% - 140px);
+  position: relative;
+  vertical-align: middle;
 }
 
 .budgetprogressbar .ui-progressbar {
-	height: 8px;
+  height: 8px;
 }
 
 .budgetprogressbar .gb-budgetprogressbar .ui-progressbar-value {
-	float: right;
-	margin: 0 -2px;
-	border: none;
+  float: right;
+  margin: 0 -2px;
+  border: none;
 }
 
 .budgetprogressbar .gb-budgetprogressbar .gb-budgetprogressbar-valuetext {
-	margin-top: 0.3em;
-	text-align: center;
+  margin-top: 0.3em;
+  text-align: center;
 }
 
 .budgetprogressbar .gb-budgetprogressbar {
@@ -30,42 +34,43 @@
 }
 
 .budgetprogressbar .progressbar-info {
-	float: right;
-	text-align: center;
-	width: 5em;
+  float: right;
+  text-align: center;
+  width: 5em;
 }
 
 .budgetprogressbar .minBarValue {
-	background-image: linear-gradient(99deg, #ffc233, #ffe19c);
+  background-image: linear-gradient(99deg, #ffc233, #ffe19c);
 }
 
 .budgetprogressbar .minCrossedBarValue {
-	background: #68c9f7;
+  background-image: linear-gradient(93deg, #68c9f7, #3799ec);
 }
 
 .budgetprogressbar .progressbar-bottomText {
-	direction: rtl;
-	position: relative;
-	top: 0.11em;
+  direction: rtl;
+  position: relative;
+  top: 0.11em;
 }
 
 .budgetprogressbar .progressbar-hoverBar {
-	direction: rtl;
-	position: relative;
+  direction: rtl;
+  position: relative;
 }
 
 .budgetprogressbar .minCrossedBarText {
-	position: relative;
-	display: block;
-	top: -0.7em;
+  position: relative;
+  display: block;
+  top: -0.25em;
+  width: 50px;
 }
 
 .budgetprogressbar .minCrossedHoverBar {
-	display: inline-block;
-	position: relative;
-	top: -0.80em;
-	right: -2px;
-	width: 2px;
-	height: 12px;
-	background-color: #24283a;
+  display: block;
+  position: relative;
+  top: -0.2em;
+  right: -2px;
+  width: 2px;
+  height: 12px;
+  background-color: #24283a;
 }
